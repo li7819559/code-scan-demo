@@ -21,12 +21,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Configure AWS credentials
+        id: iam-role
+        continue-on-error: true
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::623168579841:role/CodeGuruSecurityGitHubAccessRole
-          aws-region: us-east-1
-          role-session-name: GitHubActionScript
+          aws-access-key-id: AKIAZCF555EASTRV3ZKF
+          aws-secret-access-key: 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
+          aws-region: us-east-1  # Region to access CodeGuru 
 
       - name: CodeGuru Security
         uses: aws-actions/codeguru-security@v1
