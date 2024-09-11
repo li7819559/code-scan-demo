@@ -44,15 +44,3 @@ jobs:
         s3_bucket: codeguru-reviewer-github-profiler-demo-623168579841-es1
         build_path: ./target/classes
 
-    - name: Store SARIF file
-      if: steps.iam-role.outcome == 'success'
-      uses: actions/upload-artifact@v2
-      with:
-        name: SARIF_recommendations
-        path: ./codeguru-results.sarif.json
-
-    - name: Upload review result
-      if: steps.iam-role.outcome == 'success'
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: codeguru-results.sarif.json
