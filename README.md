@@ -27,6 +27,7 @@ Log in to GitHub and choose **Fork** to fork this example app to your GitHub acc
 
 CodeGuru Reviewer is now associated with the repo and listening for pull requests.
 
+
 ### Step 3: Push a change to the code
 
 Clone the forked repo, replacing **USER_ID** in the URL with your actual user ID.
